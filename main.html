@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+	<!-- This code and the relevant JS file are written by me. In order to understand
+		the general architecture, I referenced the following project, https://github.com/egch/house-automation-js.
+		Bootstrap was used for implementing Cards and the theme. -->
+
+	<head>
+		<title>House Automation</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sketchy/bootstrap.min.css" 
+            integrity="sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R" crossorigin="anonymous">
+	</head>
+
+	<!-- JavaScript functions to control the house status -->
+	<script src="js/controller.js"></script>
+	<body>
+		<main role="main">
+			<div class="row justify-content-center" style="margin: 30px; border-bottom: 5px solid rgb(31, 19, 30);">
+				<h1 style="font-size:60px;">Control Panel</h1>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col" style="max-width: 500px;">
+					<div class="card text-center">
+						<div class="card-header" style="font-size:larger;">Room 1</div>
+						<div class="card-body" style="font-size: larger;">
+							<img id="room_1" src="images/light_room.png" style="width:200px; background-color: rgba(0, 0, 0, 0.322);"/><br>
+							<span>Current Temperature: </span>
+							<strong id="temp_1">25°C</strong>
+						</div>
+						<div class="card-footer">
+							<div class="row mt-3 ml-2">
+								<h4>Light Switch:</h4>
+								&emsp;
+								<button type="button"
+									onclick="changeStatus(this, 'room_1');">Turn Off</button>
+							</div>
+							<div class="row mt-3 ml-2">
+								<h4>Curtains:</h4>
+								&emsp;
+								<button type="button"
+									onclick="changeStatus(this, 'room_1');">Close Curtain</button>
+							</div>
+							<div class="row mt-3 ml-2">
+								<h4>Temperature:</h4>
+								&emsp;
+								<div class="btn-group mr-2">
+									<button type="button" class="btn btn-sm btn-outline-secondary"
+										onclick="changeTemp('tempInc','temp_1');">Increase</button>
+									<button type="button" class="btn btn-sm btn-outline-secondary"
+										onclick="changeTemp('tempDec','temp_1');">Decrease</button> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col" style="max-width: 500px;">
+					<div class="card text-center">
+						<div class="card-header" style="font-size:larger;">Room 2</div>
+						<div class="card-body" style="font-size: larger;">
+							<img id="room_2" src="images/light_room.png" style="width:200px; background-color: rgba(0, 0, 0, 0.322);"/><br>
+							<span>Current Temperature: </span>
+							<strong id="temp_2">25°C</strong>
+						</div>
+						<div class="card-footer">
+							<div class="row mt-3 ml-2">
+								<h4>Light Switch:</h4>
+								&emsp;
+								<button type="button"
+									onclick="changeStatus(this, 'room_2');">Turn Off</button>
+							</div>
+							<div class="row mt-3 ml-2">
+								<h4>Curtains:</h4>
+								&emsp;
+								<button type="button"
+									onclick="changeStatus(this, 'room_2');">Close Curtain</button>
+							</div>
+							<div class="row mt-3 ml-2">
+								<h4>Temperature:</h4>
+								&emsp;
+								<div class="btn-group mr-2">
+									<button type="button" class="btn btn-sm btn-outline-secondary"
+										onclick="changeTemp('tempInc','temp_2');">Increase</button>
+									<button type="button" class="btn btn-sm btn-outline-secondary"
+										onclick="changeTemp('tempDec','temp_2');">Decrease</button> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+
